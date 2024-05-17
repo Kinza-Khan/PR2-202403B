@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        #latestProducts .container .row{
+            display: flex;
+            /* border: 1px solid red; */
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            height: 700px;
+            align-items:center;
+
+        }
+        #latestProducts .container .row .col{
+            height: 300px;
+            width: 300px;
+            border:  1px solid rgb(228, 217, 217);
+
+        }
+        .col .card .card-img{
+            height: 220px ;
+            /* border: 1px solid red; */
+        }
+        .col .card .card-content{
+            height: 50px ;
+            /* border: 1px solid blue; */
+        }
+        .col .card .card-img img{
+            height: 200px;
+        }
+        .col .card .card-content h3{
+            /* background-color: yellow; */
+            position: relative;
+            top: -15px;
+            text-align: center;
+        }
+        .col .card .card-content p{
+            /* background-color: aqua; */
+            position: relative;
+            top: -30px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section id="latestProducts">
+        <div class="container">
+
+            <!-- row start -->
+            <div class="row">
+                <!-- col 1 start -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/c2.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h3>Toyota Carolla</h3>
+                            <p><strong>PKR </strong> Rs:900000</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- col1 end -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/c3.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h3>Toyota Carolla</h3>
+                            <p><strong>PKR </strong> Rs:900000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/c2.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h3>Toyota Carolla</h3>
+                            <p><strong>PKR </strong> Rs:900000</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="col col2">
+                <div class="card">
+               <div class="card-img"></div>
+               <div class="card-content"></div>
+           </div>
+       </div>
+       <div class="col col2">
+        <div class="card">
+       <div class="card-img"></div>
+       <div class="card-content"></div>
+   </div>
+</div>
+<div class="col col2">
+    <div class="card">
+   <div class="card-img"></div>
+   <div class="card-content"></div>
+</div>
+</div>
+<div class="col col2">
+    <div class="card">
+   <div class="card-img"></div>
+   <div class="card-content"></div>
+</div>
+</div>
+<div class="col col2">
+    <div class="card">
+   <div class="card-img"></div>
+   <div class="card-content"></div>
+</div>
+</div>
+     
+            </div>
+<!-- row end -->
+        </div>
+    </section>
+    <section id="newArrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
