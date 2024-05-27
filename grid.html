@@ -7,9 +7,9 @@
     <style>
         .row{
             display: grid;
-            border:  1px solid red;
+            /* border:  1px solid red; */
             grid-template-columns: 100px 200px 300px 300px 300px;
-            grid-template-rows: 100px 200px 300px 350px 350px 150px;
+            grid-template-rows: 100px 200px 300px 420px 350px 150px;
             grid-gap: 10px;
         }
         .row .col{
@@ -40,9 +40,92 @@
                 display: flex;
         }
         .c4 .row .col{
-            height: 300px;
+            /* height: 300px; */
             width: 300px;
         }
+        header .row{
+            width: 90%;
+            /* border: 2px solid aqua; */
+            height: 90px;
+            margin: 0 auto;
+            display: flex;
+        }
+        header .row .col1{
+            height: 90px;
+            /* background-color: yellow; */
+            width: 15%;
+        }
+        header .row .col2{
+            /* background-color: green; */
+            height: 90px;
+            width: 85%;
+        }
+        header .row .col2 ul{
+            /* background-color: yellow; */
+            padding: 10px;
+            position: relative;
+            top: 10px;
+            left: 100px;
+            width: 60%;
+          
+        }
+        header .row .col2 ul li{
+                display: inline;
+                margin-left: 25px;
+        }
+        header .row .col1 p{
+                /* background-color: green; */
+                font-size: 30px;
+                text-align: center;
+        }
+        .c2 .sidebar{
+            /* border: 2px solid orange ; */
+            /* height: 500px; */
+            width: 200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .c2 .sidebar ul li{
+            border-bottom: 1px solid black;
+            padding: 10px;
+        }
+        .c3 .cover{
+            background:url("images/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 500px;
+            /* height: inherit; */
+        }
+        .c4 h1{
+            padding: 10px;
+            text-align: center;
+        }
+        .c4 .card{
+            /* background-color: yellow; */
+            /* height: inherit; */
+        }
+        
+        .card img{
+            height:190px;
+            /* height: inherit; */
+        }
+        .card-content h3{
+            /* background-color: green; */
+            text-align:  center;
+            position: relative;
+            top: -10px;
+        }
+        .card-content p{
+            /* background-color: green; */
+            text-align:  center;
+            position: relative;
+            top: -20px;
+        }
+
+  
+
+
     </style>
 </head>
 <body>
@@ -52,17 +135,83 @@
             <div class="row">
                 <div class="col c1">
                     <header>
-                            
+                        <div class="row">
+                            <div class="column col1"><p>
+                                Logo
+                            </p></div>
+                            <div class="column col2">
+                                <ul>
+                                    <li>Home</li>
+                                    <li>About</li>
+                                    <li>Contact</li>
+                                    <li>Faq</li>
+                                    <li>Reviews</li>
+                                    <li>Forums</li>
+                                    <li>Profile</li>
+                                </ul>
+                            </div>
+                   
+                        </div>
                     </header>
                 </div>
-                <div class="col c2">c2</div>
-                <div class="col c3">c3</div>
+                <div class="col c2">
+                    <div class="sidebar">
+                        <h1>About Sevices</h1>
+                        <ul>
+                            <li>What is Html ?</li>
+                            <li>What is Css ?</li>
+                            <li>What is JS ?</li>
+                            <li>Define Jquery ?</li>
+                            <li>Difference Between library and framework?</li>
+                            <li>What is SEO ?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col c3">
+                    <div class="cover">
+
+                </div></div>
                 <div class="col c4">
+                    <h1>About Courses</h1>
                     <div class="row">
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="images/seo.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Search Engine</h3>
+                                    <p><strong>PKR </strong> Rs:900000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col"><div class="card">
+                            <div class="card-img">
+                                <img src="images/web.jpg" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3>Toyota Carolla</h3>
+                                <p><strong>PKR </strong> Rs:900000</p>
+                            </div>
+                        </div></div>
+                        <div class="col"><div class="card">
+                            <div class="card-img">
+                                <img src="images/r.jfif" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3>Toyota Carolla</h3>
+                                <p><strong>PKR </strong> Rs:900000</p>
+                            </div>
+                        </div></div>
+                        <div class="col"><div class="card">
+                            <div class="card-img">
+                                <img src="images/web.jfif" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3>Toyota Carolla</h3>
+                                <p><strong>PKR </strong> Rs:900000</p>
+                            </div>
+                        </div></div>
                     </div>
                 </div>
                 <div class="col c5">c5</div>
