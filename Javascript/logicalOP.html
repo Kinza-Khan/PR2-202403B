@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-group">
+   <label for="">User Email : </label>
+   <input type="text" id="userEmail">
+  </div>
+  <div class="form-group">
+   <label for="">Password :</label>
+   <input type="text" id="userPassword">
+  </div>
+  <button onclick="getUserData()">Submit</button>
+  <h1></h1>
+  </div>
+  <script>
+    // let stdName = prompt("Enter Your Name");
+    // let userData = document.getElementById("head1");
+    // userData.innerHTML = stdName;
+      // Es5 Syntax 
+
+    function getUserData(){
+
+      let uEmail = document.querySelector("#userEmail").value;
+      let uPassword = document.querySelector("#userPassword").value;
+      let userData = document.querySelector("h1");
+
+        if(uEmail == "kinzaaptech@gmail.com" &&  uPassword == '123' ){
+            userData.innerHTML = 'login Successfully ' + uEmail;
+        }
+        else{
+          userData.innerHTML = 'invalid credentials ';
+        }
+    }
+
+  </script>
+</body>
+</html>

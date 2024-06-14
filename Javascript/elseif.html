@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-group">
+      <label for="">Maths</label>
+      <input type="text" id="maths">
+    </div>
+    <div class="form-group">
+      <label for="">English</label>
+      <input type="text" id="english">
+    </div>
+    <div class="form-group">
+      <label for="">Urdu</label>
+      <input type="text" id="urdu">
+    </div>
+    <div class="form-group">
+      <label for="">Physics</label>
+      <input type="text" id="physics">
+    </div>
+    <div class="form-group">
+      <label for="">Chemistry</label>
+      <input type="text" id="chemistry">
+    </div>
+
+    <button onclick="getPercentage()">Submit</button>
+  </div>
+    <h1></h1>
+
+  <script>
+    function getPercentage(){  
+      let mathMarks = parseInt(document.querySelector("#maths").value);
+      let engMarks = parseInt(document.querySelector("#english").value);
+      let urduMarks = parseInt(document.querySelector("#urdu").value);
+      let physicsMarks = parseInt(document.querySelector("#physics").value);
+      let chemistryMarks = parseInt(document.querySelector("#chemistry").value);
+      let obtainMarks = mathMarks + engMarks + urduMarks +physicsMarks + chemistryMarks;
+      let percentage = (obtainMarks/500)*100 ;
+      let printData = document.querySelector('h1');
+        console.log( obtainMarks +typeof(mathMarks));
+      console.log('hello');
+      if(percentage>=80 && percentage<=100){
+          printData.innerHTML = "A+ " +percentage;
+      }
+      else if(percentage>=70  && percentage<80){
+        printData.innerHTML = "A " +percentage;
+      }
+
+      else if(percentage>=60 && percentage<70){
+        printData.innerHTML = "B" +percentage;
+      }
+      else if(percentage>=50 && percentage<60){
+        printData.innerHTML = "C " +percentage;
+      }
+      else if(percentage>=40 && percentage<50){
+        printData.innerHTML = "D " +percentage;
+      }
+      else if(percentage<40 && percentage>=0){ 
+        printData.innerHTML = "Fail " +percentage;
+      }
+      else{
+        printData.innerHTML = " invalid ";
+      }
+    }
+  </script>
+</body>
+</html>
