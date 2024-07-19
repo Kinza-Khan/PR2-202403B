@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+
+    </ul>
+    <script>
+        let students = ["zoha", "aqsa", "hamza", "zafir", "ali"];
+        // students.sort();
+        students.reverse();
+        let ulData = document.querySelector("#ul");
+        students.forEach(value => {
+            ulData.innerHTML += `<li>` + value + `</li>`
+            console.log(value)
+        })
+    </script>
+</body>
+
+
+
+
+
+<script>
+
+    let rand = a => {
+        return a;
+    }
+    rand(10);
+</script>
+
+</html>

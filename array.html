@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+
+<body>
+    <ul id="nav">
+
+    </ul>
+    <h1 id="pData"></h1>
+    <script>
+        let stdData = ["Home", "About", "Contact", "Faq", "Forums"];
+        let navItems = document.querySelector("#nav");
+
+        for (let i = 0; i < stdData.length; i++) {
+            navItems.innerHTML += `<li>` + stdData[i] + `</li>`;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #row {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #row .col {
+            height: 340px;
+            width: 280px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div id="row">
+
+            </div>
+        </div>
+    </section>
+</body>
+
+
+<script>
+    let myRow = document.querySelector("#row");
+    let myCol = "";
+    let carsData = [
+        { name: "Toyota Corolla 2024", price: 9500000, image: "images/im1.jpg" },
+        { name: "Suzuki Alto 2024", price: 8500000, image: "images/im4.jpg" },
+        { name: "Mercedes  2024", price: 4500000, image: "images/im2.png" },
+        { name: "BMW 2024", price: 5500000, image: "images/im3.jpg" }
+    ];
+
+    for (let i = 0; i < carsData.length; i++) {
+        myCol += ` <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="`+ carsData[i].image + `" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2>`+ carsData[i].name + `</h2>
+                            <p>`+ carsData[i].price + `</p>
+                        </div>
+                    </div>
+                </div>`
+    }
+    myRow.innerHTML = myCol;
+
+</script>
+
+</html>
