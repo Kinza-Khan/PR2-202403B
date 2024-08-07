@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all Products</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center p-4">All Products</h1>
+        <div class="row" id="productsRow">
+
+        </div>
+    </div>
+
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script>
+
+
+        let productContainer = $("#productsRow");
+        $.ajax({
+
+            url: "products.json",
+            dataType: "json",
+            success: function (data) {
+                // console.log(data);
+                let myAllKeys = Object.keys(data);
+                console.log(myAllKeys);
+                // $.each({
+
+                // })
+
+
+
+            }
+            // yahan pr success end ho raha ha
+        })
+
+
+    </script>
+</body>
+
+</html>

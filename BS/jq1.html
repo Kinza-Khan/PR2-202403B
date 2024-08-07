@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="stylesheet" href="bootstrap-4.6.2-dist/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+
+    <div class="container p-5">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" name="" id="inputVal" class="form-control" placeholder="" aria-describedby="helpId">
+            <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+        <button class="btn btn-info" id="sub">Submit</button>
+
+        <table class="table">
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<script src="jquery/jquery-3.7.1.js"></script>
+<script src="bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let tbody = $("tbody");
+
+        $("#sub").click(function () {
+            tbody.empty();
+            // document.getElementById("inputVal").value;
+            let inpValue = $("#inputVal").val();
+            // console.log(inpValue);
+            for (let i = 1; i <= 10; i++) {
+                let tr = `<tr>
+                        <td>`+ inpValue + `</td>
+                        <td>x</td>
+                        <td>`+ i + `</td>
+                        <td>=</td>
+                        <td>`+ inpValue * i + `</td>
+                    </tr>`
+                tbody.append(tr);
+            }
+
+        })
+
+        // 
+        $("#inputVal").keyup(function () {
+            // document.getElementById("inputVal").value;
+            let inpValue = $(this).val();
+            console.log(inpValue);
+        })
+
+
+    })
+</script>
+
+</html>
