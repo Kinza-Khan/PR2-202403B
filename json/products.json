@@ -4,25 +4,25 @@
             "id": 1,
             "name": "Gucci BagA78",
             "price": 560000,
-            "image": "images/bg1.png"
+            "image": "images/bg1.avif"
         },
         {
             "id": 2,
             "name": "Gucci BagR678",
             "price": 970000,
-            "image": "images/bg2.png"
+            "image": "images/bg2.avif"
         },
         {
             "id": 3,
             "name": "Gucci BagR809",
             "price": 900000,
-            "image": "images/bg3.png"
+            "image": "images/bg3.avif"
         },
         {
             "id": 4,
             "name": "Gucci BagV67",
             "price": 670000,
-            "image": "images/bg4.png"
+            "image": "images/bg4.avif"
         }
     ],
     "Shoes": [
@@ -30,25 +30,25 @@
             "id": 5,
             "name": "Nike SH780",
             "price": 780000,
-            "image": "images/sh1.avif"
+            "image": "images/sh1.png"
         },
         {
             "id": 6,
             "name": "Nike SHA78",
             "price": 780000,
-            "image": "images/sh2.avif"
+            "image": "images/sh2.png"
         },
         {
             "id": 7,
             "name": "Nike SH7A8B",
             "price": 780000,
-            "image": "images/sh3.avif"
+            "image": "images/sh3.png"
         },
         {
             "id": 8,
             "name": "Nike SH7GH8",
             "price": 780000,
-            "image": "images/sh4.jpg"
+            "image": "images/sh4.png"
         }
     ],
     "Perfumes": [

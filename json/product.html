@@ -13,7 +13,7 @@
     <div class="container">
         <h1 class="text-center p-4">All Products</h1>
         <div class="row" id="productsRow">
-
+              
         </div>
     </div>
 
@@ -22,23 +22,37 @@
     <script>
 
 
-        let productContainer = $("#productsRow");
         $.ajax({
-
-            url: "products.json",
+           url: "products.json",
             dataType: "json",
-            success: function (data) {
-                // console.log(data);
-                let myAllKeys = Object.keys(data);
+            success: function (response) {
+                 console.log(response);
+               let productContainer = $("#productsRow");
+                let myAllKeys = Object.keys(response);
                 console.log(myAllKeys);
-                // $.each({
+                $.each(myAllKeys,function(cIndex,cName){
+                    // console.log(cName);
+                     let products = response[cName];
+                     console.log(products);
+                     productContainer.append(` <div class="col-md-12"><h1 class="p-3">`+cName+`</h1></div>`);
+                     $.each(products,function(k,v){
+                        let row = `
+                          <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img class="card-img-top" src="`+v.image+`" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">`+v.name+`</h4>
+                            <p class="card-text">`+v.price+`</p>
+                            <button class="btn btn-primary col-12">details</button>
 
-                // })
-
-
-
-            }
-            // yahan pr success end ho raha ha
+                        </div>
+                    </div>
+                </div>
+                 `
+                        productContainer.append(row);
+                     })
+                })  // each method end   
+            } // yahan pr success end ho raha ha   
         })
 
 
