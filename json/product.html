@@ -10,7 +10,8 @@
 
 <body>
 
-    <div class="container">
+    <div class="container mt-5">
+        <input type="text" id="searchHere" class="form-control" placeholder="search heare...">
         <h1 class="text-center p-4">All Products</h1>
         <div class="row" id="productsRow">
 
@@ -18,8 +19,7 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-            aria-hidden="true">
+        <div class="modal fade" id="mId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -51,6 +51,7 @@
     <script>
 
 
+
         $.ajax({
             url: "products.json",
             dataType: "json",
@@ -65,7 +66,7 @@
                     console.log(products);
                     productContainer.append(` <div class="col-md-12"><h1 class="p-3">` + cName + `</h1></div>`);
                     $.each(products, function (k, v) {
-                        let row = `
+                        let col = `
                           <div class="col-md-3 p-4">
                     <div class="card">
                         <img class="card-img-top" src="`+ v.image + `" alt="">
@@ -73,29 +74,38 @@
                             <h4 class="card-title">`+ v.name + `</h4>
                             <p class="card-text">`+ v.price + `</p>
                             <button  data-category="`+ cName + `" data-id="` + v.id + `" class="btn btn-primary col-12 btn-detail">details</button>
-
                         </div>
                     </div>
                 </div>
                  `
-                        productContainer.append(row);
+                        productContainer.append(col);
                     })
                 })  // each method end   
-
                 // modal work start
-
-
                 $(".btn-detail").click(function () {
                     let productId = $(this).data('id'); //this target on button and data finds data attr value ;
                     let category = $(this).data('category');
 
-                               // object['Bags'] Object['Shoes'] Object['perfumes'] => [{},{},{}]
+                    // object['Bags'] Object['Shoes'] Object['perfumes'] => [{},{},{}]
                     let product = response[category].find(pr => pr.id === productId);
                     $(".modal-title").text(product.name);
                     $("#modalImg").attr('src', product.image);
                     $("#modalPrice").text(product.price);
 
-                    $("#modelId").modal('show');
+                    $("#mId").modal('show');
+
+                })   //modal end
+
+
+                $("#searchHere").keyup(function () {
+                    let userSearchVal = $(this).val();
+                    console.log(userSearchVal);
+                    let myCategories = Object.keys(response);
+                    // console.log(myCategories);   
+                    $.each(myCategories, function (cIndex, cName) {
+                        let products = response[cName];
+                        // console.log(products);
+                    })
 
                 })
 
