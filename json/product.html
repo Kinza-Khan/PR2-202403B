@@ -59,7 +59,8 @@
                 console.log(response);
                 let productContainer = $("#productsRow");
                 let myAllKeys = Object.keys(response);
-                console.log(myAllKeys);
+                // console.log(myAllKeys);
+               function myProducts(){
                 $.each(myAllKeys, function (cIndex, cName) {
                     // console.log(cName);
                     let products = response[cName];
@@ -80,9 +81,14 @@
                  `
                         productContainer.append(col);
                     })
-                })  // each method end   
+                })
+                
+                // each method end 
+            }
+            // function end
+            myProducts();  
                 // modal work start
-                $(".btn-detail").click(function () {
+                $(document).on('click','.btn-detail',function () {
                     let productId = $(this).data('id'); //this target on button and data finds data attr value ;
                     let category = $(this).data('category');
 
@@ -99,14 +105,35 @@
 
                 $("#searchHere").keyup(function () {
                     let userSearchVal = $(this).val();
-                    console.log(userSearchVal);
+                    // console.log(userSearchVal);
+                    productContainer.empty();
                     let myCategories = Object.keys(response);
                     // console.log(myCategories);   
                     $.each(myCategories, function (cIndex, cName) {
                         let products = response[cName];
-                        // console.log(products);
-                    })
+                        // console.log('hello');
+                        let myFinalProducts = products.filter(pro=>pro.name.toLowerCase().includes  (userSearchVal));
+                            //  console.log(myFinalProducts);
 
+                            if(myFinalProducts.length>0){
+                                    myFinalProducts.forEach(element => {
+                                      let  col = `
+                          <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img class="card-img-top" src="`+ element.image + `" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">`+ element.name + `</h4>
+                            <p class="card-text">`+ element.price + `</p>
+                            <button  data-category="`+ cName + `" data-id="` + element.id + `" class="btn btn-primary col-12 btn-detail">details</button>
+                        </div>
+                    </div>
+                </div>
+                 `            
+                   productContainer.append(col);
+                                    });
+                            }                         
+                        
+                    })
                 })
 
             } // yahan pr success end ho raha ha   
