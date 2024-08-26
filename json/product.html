@@ -91,7 +91,6 @@
                 $(document).on('click','.btn-detail',function () {
                     let productId = $(this).data('id'); //this target on button and data finds data attr value ;
                     let category = $(this).data('category');
-
                     // object['Bags'] Object['Shoes'] Object['perfumes'] => [{},{},{}]
                     let product = response[category].find(pr => pr.id === productId);
                     $(".modal-title").text(product.name);
@@ -99,10 +98,7 @@
                     $("#modalPrice").text(product.price);
 
                     $("#mId").modal('show');
-
                 })   //modal end
-
-
                 $("#searchHere").keyup(function () {
                     let userSearchVal = $(this).val();
                     // console.log(userSearchVal);

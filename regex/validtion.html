@@ -54,7 +54,7 @@
 
                     $("#userEmail").keyup(function () {
                         let uEmail = $(this).val();
-                        let uEmailRE = /^[a-z0-9_]{3,}[@][a-z]{5}[.][a-z]{3}$/;
+                        let uEmailRE = /^[a-z0-9_]{3,}@gmail\.com$/;
                         if (!uEmailRE.test(uEmail)) {
                             $(this).css('border', '1px solid red');
                             $(this).next().show('small').text("please enter correct email").css('color', 'red');
@@ -102,19 +102,29 @@
                             $(inpId).next().show('small').text('please filled out this field').css('color', 'red');
                         }
                     }
-
                     $("#sub").click(function () {
                         let userName = $("#userName").val();
                         let userEmail = $("#userEmail").val();
-                        let userPassword = $("#userPassword");
+                        let userPassword = $("#userPassword").val();
                         let userConfirmPassword = $("#userConfirmPassword").val();
                         let uNameRE = /^[a-zA-z0-9]{3,}$/;
-                        let uEmailRE = /^[a-z0-9_]{3,}[@][a-z]{5}[.][a-z]{3}$/;
+                        let uEmailRE = /^[a-z0-9_]{3,}@gmail\.com$/;
                         let uPasswordRE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/;
+                        let users = JSON.parse(localStorage.getItem('students')) || [];
                         emptyFileds("#userName");
                         emptyFileds("#userEmail");
                         emptyFileds("#userPassword");
-                        emptyFileds("#userConfirmPassword");
+                      emptyFileds("#userConfirmPassword");
+                        if (uNameRE.test(userName) && uEmailRE.test(userEmail) && uPasswordRE.test(userPassword)) {
+                            users.push({ 'name': userName, 'email': userEmail, 'password': userPassword });
+                            localStorage.setItem('students', JSON.stringify(users));
+                            alert('register successfully');
+                            $('input').val('');
+                            location.assign('validation.html');
+                        }
+                        else {
+                            // alert('invalid data');
+                        }
 
                     })
 
